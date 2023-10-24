@@ -8,27 +8,19 @@ package com.mycompany.juegocartas;
  *
  * @author pl2023266
  */
-abstract class Carta {
-    
-    public enum Color{
-        Rojo,
-        Azul,
-        Amarillo,
-        Verde
-    }
-    
-    protected Color m_color;
-    
-    Carta(Color color){
-        m_color = color;
-    }
+interface Carta {
     
     //GETTERS
-    public abstract Color getColor();
-    public abstract int getNumero();
+    public abstract String getColor();
+    
+   public abstract int getNumero();
     
     //SETTERS
-    public abstract void setColor(Color color);
+    public abstract void setColor(String color);
     
+    public abstract void setNumero(int numero);
+    
+    
+    //ENSEÑAR CARTA
     public abstract String ensenaCarta();
 }

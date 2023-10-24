@@ -25,23 +25,48 @@ public class Jugador {
         return m_mano.size();
     }
     
+    public Carta getCartaMano(int i){
+        return m_mano.get(i);
+    }
+    
     //SETTERS
     public void setMano(ArrayList<Carta> mano){
         m_mano = mano;
     }
     
     //VALOR RANDOM
+    //GENERAR UNA MANO INICIAL
     public void generaMano(Baraja baraja){
         for(int i = 0; i<7 ; i++){
-            robaCarta(baraja, i);
+            //SI EL INDICE DEL NUMERO DE CARTA DE LA BARAJA SUBE ESTOY SALTANDOME CARTAS
+            //PORQUE AL BORRAR LA CARTA Y ACCEDER AL SIGUIENTE ESTOY ACCEDIENDO AL INDICE+2
+            robaCarta(baraja, 0);
         }
     }
     
-    public String ensenaCartaMano (int i){
-        return m_mano.get(i).ensenaCarta();
+    //ENSEÑAR LA MANO
+    public void ensenaMano (){
+        for(int i=0;i<m_mano.size();i++){
+            System.out.println("["+ i +"]"+m_mano.get(i).ensenaCarta());
+        }
+    }
+    
+    //ENSEÑAR UNA CARTA DE LA MANO
+    public void ensenaCartaMano (int i){
+        System.out.println(m_mano.get(i).ensenaCarta());
+    }
+    
+    //BORRAR CARTA DE LA MANO
+    public void borraCartaMano(Carta carta){
+        for(int i = 0; i<m_mano.size(); i++){
+            if(m_mano.get(i) == carta){
+                m_mano.remove(carta);
+            }
+        }
     }
     
     //VALOR RANDOM
+    //ROBAR UNA CARTA
     public void robaCarta(Baraja baraja, int i){
         //m_mano.add(baraja.getCartas().get(i));
         m_mano.add(baraja.getCartaBaraja(i));

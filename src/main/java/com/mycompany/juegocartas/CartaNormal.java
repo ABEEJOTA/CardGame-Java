@@ -8,37 +8,36 @@ package com.mycompany.juegocartas;
  *
  * @author pl2023266
  */
-public class CartaNormal extends Carta {
-    private int m_numero;
+public class CartaNormal implements Carta {
+    protected int m_numero;
+    protected String m_color;
     
-    
-    
-    CartaNormal(Color color, int numero){
-        super(color);
+    CartaNormal(String color, int numero){
+        m_color = color;
         m_numero = numero; 
     }
     
     //GETTERS
-    @Override public int getNumero(){
+   @Override public int getNumero(){
         return m_numero;
     }
-    
-    @Override public Color getColor(){
-        return m_color;
-    }
+   
+   @Override public String getColor(){
+       return m_color;
+   }
     
     //SETTERS
-    public void setNumero(int numero){
+    @Override public void setNumero(int numero){
         m_numero = numero;
     }
     
-    @Override public void setColor(Color color){
-        m_color = color;
+    @Override public void setColor(String color){
+        m_color =  color;
     }
     
-    
+    //ENSEÑAR CARTA
     @Override public String ensenaCarta (){
-        Color color =  getColor();
+        String color =  getColor();
         int numero = getNumero();
         return (color + " " + numero);
     }

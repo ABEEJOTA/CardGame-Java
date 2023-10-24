@@ -11,17 +11,16 @@ import java.util.ArrayList;
  */
 public class Baraja {
     private ArrayList<Carta> m_cartas;
-    final int CARTAS_BARAJA = 10;
     
     Baraja(ArrayList<Carta> cartas){
         m_cartas = cartas;
     }
     
-    public ArrayList<Carta> getBaraja(){
+    public ArrayList<Carta> getCartas(){
         return m_cartas;
     }
     
-    public void setBaraja(ArrayList<Carta> cartas){
+    public void setCartas(ArrayList<Carta> cartas){
         m_cartas = cartas;
     }
     

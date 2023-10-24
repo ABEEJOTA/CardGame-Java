@@ -8,13 +8,12 @@ package com.mycompany.juegocartas;
  *
  * @author pl2023266
  */
-
 /*
-public class CartaEspecial extends Carta {
+public class CartaEspecial implements Carta {
+    
     private String m_efecto;
     
-    CartaEspecial(String color, String efecto){
-        super (color);
+    CartaEspecial(String efecto){
         m_efecto = efecto;
     }
     
@@ -27,6 +26,6 @@ public class CartaEspecial extends Carta {
     public void setEfecto(String efecto){
         m_efecto = efecto;
     }
-    
+   
 }
 */
