@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.juegocartas;
+package com.mycompany.juegocartasbasico;
 import java.util.ArrayList;
 
 /**
@@ -11,6 +11,10 @@ import java.util.ArrayList;
  */
 public class Jugador {
     private ArrayList<Carta> m_mano;
+    
+    public Jugador(){
+        m_mano = new ArrayList();
+    }
     
    Jugador(ArrayList<Carta> mano){
         m_mano = mano;
@@ -34,7 +38,6 @@ public class Jugador {
         m_mano = mano;
     }
     
-    //VALOR RANDOM
     //GENERAR UNA MANO INICIAL
     public void generaMano(Baraja baraja){
         for(int i = 0; i<7 ; i++){
@@ -65,7 +68,6 @@ public class Jugador {
         }
     }
     
-    //VALOR RANDOM
     //ROBAR UNA CARTA
     public void robaCarta(Baraja baraja, int i){
         //m_mano.add(baraja.getCartas().get(i));

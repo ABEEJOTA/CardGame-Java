@@ -2,18 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.juegocartas;
+package com.mycompany.juegocartasbasico;
 
 /**
  *
  * @author pl2023266
  */
-public class CartaNormal implements Carta {
+public class CartaNormal extends Carta {
     protected int m_numero;
-    protected String m_color;
     
     CartaNormal(String color, int numero){
-        m_color = color;
+        super(color);
         m_numero = numero; 
     }
     
@@ -36,9 +35,7 @@ public class CartaNormal implements Carta {
     }
     
     //ENSEÑAR CARTA
-    @Override public String ensenaCarta (){
-        String color =  getColor();
-        int numero = getNumero();
-        return (color + " " + numero);
+    @Override public String ensenaCarta (){;
+        return (m_color + " " + m_numero);
     }
 }
