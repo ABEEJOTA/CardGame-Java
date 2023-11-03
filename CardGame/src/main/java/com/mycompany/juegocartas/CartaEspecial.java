@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.juegocartas;
+package com.mycompany.cardgame;
 
 /**
  *
@@ -36,7 +36,7 @@ public class CartaEspecial extends Carta {
         m_color = color;
     }
     
-    public String ensenaCarta(){
+    @Override public String ensenaCarta(){
         return(m_color + " " + m_efecto);
     }
    

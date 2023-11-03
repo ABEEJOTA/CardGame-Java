@@ -2,24 +2,31 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.juegocartas;
+package com.mycompany.cardgame;
 
 /**
  *
  * @author pl2023266
  */
-    public abstract class Carta {
+    public class Carta {
     String m_color;
     
     Carta(String color){
         m_color = color;
     }
+    
     //GETTERS
-    public abstract String getColor();
+    public String getColor(){
+        return m_color;
+    }
     
     //SETTERS
-    public abstract void setColor(String color);
+    public void setColor(String color){
+        m_color = color;
+    }
     
     //ENSEÑAR CARTA
-    public abstract String ensenaCarta();
+    public String ensenaCarta(){
+        return m_color;
+    }
 }

@@ -1,7 +1,7 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-package com.mycompany.juegocartas;
+package com.mycompany.cardgame;
 
 import java.util.*;
 
@@ -12,6 +12,8 @@ import java.util.*;
 public class JuegoCartas {
 
     public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
         
         int[] numeros = {1, 2, 3, 4, 5, 6,7, 8, 9, 0};
         String[] colores = {"Rojo", "Azul", "Verde", "Amarillo"};
@@ -44,25 +46,26 @@ public class JuegoCartas {
         }
         //MEZCLA BARAJA
         Collections.shuffle(cartasBaraja);
-        //DECLARACION BARAJA
+        //INICIALIZAR OBJETO BARAJA CON LISTA CARTAS BARAJA
         Baraja Baraja = new Baraja(cartasBaraja);
-
-        //POSIBLE BUCLE PARA NUMERO DE JUGADORES DINAMICO
-        //TEST GENERAR MANO JUGADOR 1
-        Jugador Jugador1 = new Jugador();
-        //GENERAR MANO
-        Jugador1.generaMano(Baraja);
-
-        //TEST GENERAR MANO JUGADOR 2
-        Jugador Jugador2 = new Jugador();
-        //GENERAR MANO
-        Jugador2.generaMano(Baraja);
-
-        //TEST JUGAR CARTA
-        Juego Partida = new Juego(Baraja);
+        
+        //PEDIR NUM JUGADORES
+        System.out.println("Introduce el número de jugadores:");
+        int n = sc.nextInt();
+        
+        //GENERACION DE JUGADORES
+        ArrayList<Jugador> jugadores = new ArrayList();
+        for (int i=0;i<n;i++){
+            //GENERO JUGADOR, LE DOY MANO Y LO METO EN LA LISTA DE JUGADORES
+            Jugador Jugador = new Jugador();
+            Jugador.generaMano(Baraja);
+            jugadores.add(Jugador);
+        }
+        
+        //CREO LA PARTIDA
+        Juego Partida = new Juego(Baraja, jugadores);
         
         //BUCLE DE JUGAR CARTAS HASTA QUE UN JUGADOR SE QUEDE SIN CARTAS
-        Partida.buclePartida(Jugador1,Jugador2);
-
+        Partida.buclePartida(jugadores, n);
     }
 }

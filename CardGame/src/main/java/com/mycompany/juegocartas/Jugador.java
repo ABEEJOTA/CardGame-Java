@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.juegocartas;
+package com.mycompany.cardgame;
 import java.util.ArrayList;
 
 /**
@@ -69,6 +69,7 @@ public class Jugador {
     }
     
     //ROBAR UNA CARTA
+    //QUITAR i?????
     public void robaCarta(Baraja baraja, int i){
         m_mano.add(baraja.getCartaBaraja(i));
         baraja.borrarCartaBaraja(i);
